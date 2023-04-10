@@ -10,6 +10,7 @@ int B = int.Parse(Console.ReadLine());
 
 int result = Stepen(A,B);
 Console.WriteLine($"{A}, {B} -> {result}");
+
 int Stepen (int number1,int number2)
 {
     int result = 1;
