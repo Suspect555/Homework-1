@@ -5,23 +5,28 @@
 Console.WriteLine("enter array size");
 int size = int.Parse(Console.ReadLine());
 
-int [] array = RandomArray(size);
+int [] array =FilledArray(size);
+
 PrintArray (array);
 
-int [] RandomArray(int size)
+int []FilledArray(int size)
 {
     int [] array = new int [size];
-    Random rand = new Random();
-    for (int i = 0; i < array.Length; i++)
 
-      array [i] = rand.Next();
-    
+    for (int i = 0; i < array.Length; i++)
+{
+Console.Write($"enter element {i+1} -> ");
+      array [i] = int.Parse(Console.ReadLine());
+}   
   return array;
 }
+
 void PrintArray(int [] array)
+
 {
     for (var i = 0; i < array.Length; i++)
     {
-        Console.WriteLine(array[i]);
+
+        Console.Write(array[i]);
     }
 }
