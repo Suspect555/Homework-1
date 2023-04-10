@@ -5,7 +5,7 @@
 Console.WriteLine("enter array size");
 int size = int.Parse(Console.ReadLine());
 
-int [] array =FilledArray(size);
+int [] array = FilledArray(size);
 
 PrintArray (array);
 
