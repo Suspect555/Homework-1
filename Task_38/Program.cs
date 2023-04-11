@@ -5,7 +5,7 @@
 int [] array = new int[5];
 
 
-FillArray(array);
+FillArray(array); 
 PrintArray(array);
 
 int MaxNumber = FindMax(array);
