@@ -27,7 +27,7 @@ void FillArray(int[,,] matr)
     int number;
     for (int i = 0; i < tmp.GetLength(0); i++)
     {
-        tmp[i] = new Random().Next(1, 10);
+        tmp[i] = new Random().Next(10, 100);
         number = tmp[i];
         if (i >= 1)
         {
@@ -35,7 +35,7 @@ void FillArray(int[,,] matr)
             {
                 while (tmp[i] == tmp[j])
                 {
-                    tmp[i] = new Random().Next(1, 10);
+                    tmp[i] = new Random().Next(10, 100);
                     j = 0;
                     number = tmp[i];
                 }
