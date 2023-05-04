@@ -9,15 +9,20 @@
 Console.WriteLine("Enter Number");
 
 int N = int.Parse(Console.ReadLine());
-int GetResult = GetResult(N);
+
+int number = N;
 Console.WriteLine($"N = {N} -> ");
 
-int GetResult(int N);
+Print(number);
+void Print(int number)
 {
-    if (N ==0) return N;
-    else
+    if(number==0)
     {
-        return A*GetResult(A, B-1);
+        return;
     }
+    Console.Write($"{number} ");
+    number--;
+    Print(number);
+
 
 }
