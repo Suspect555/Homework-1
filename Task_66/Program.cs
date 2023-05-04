@@ -4,21 +4,25 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-Console.WriteLine("Enter A Number");
-int A = int.Parse(Console.ReadLine());
-Console.WriteLine("Enter B Number");
-int B = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter M Number");
+int M = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter N Number");
+int N = int.Parse(Console.ReadLine());
 
-int result = GetResult(A,B);
-Console.WriteLine($"A = {A}; B = {B} -> {result}");
+int result = GetResult(M,N);
 
-int GetResult(int A, int B)
+Console.WriteLine($"M = {M}; N = {N} -> {result + M}");
+
+int GetResult(int M, int N)
 {
+   int res = M;
 
-    if (B ==1) return A;
+    if (M == N) return 0;
     else
     {
-        return A+GetResult(A, B-1);
+        M++;
+        res = M + GetResult(M, N);
+        return res;
     }
 
 }
