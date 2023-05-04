@@ -6,6 +6,7 @@
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
+/*
 void PrintArray(int[,,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -65,3 +66,66 @@ int[,,] matrix = new int[x, y, z];
 FillArray(matrix);
 Console.WriteLine();
 PrintArray(matrix);
+*/
+int [,,] matrix = Generate3DMatrix();
+PrintArray(matrix);
+
+
+int [,,] Generate3DMatrix()
+ 
+{
+    int [,,]result = new int[2,2,2];
+
+    HashSet<int> hashSet = new HashSet<int>();
+
+
+    Random random = new Random();
+    
+        for (var i=0; i < result.GetLength(0); i++) 
+        {
+            for (var j=0; j < result.GetLength(1); j++)
+            {
+                for (var k=0; k < result.GetLength(2); k++)
+                {
+                    while(true)          // Генерация уникальных рандомных чисел на позициях по очереди
+                    {
+                        int number = random.Next(10,100);
+                        bool isExists = hashSet.TryGetValue(number ,  out int _);
+
+                        if (!isExists)
+                        {
+                            result  [i,j,k] = number;
+                            hashSet.Add(number);
+                            break;
+                        }
+         
+                    }
+                    
+
+
+                    // result[i,j,k] = random.Next(10,100); Генерация рандомных чисел на позициях по очереди
+                 
+                }
+            }
+        }
+
+        return result;
+    
+}
+
+void PrintArray(int [,,]matrix)
+{
+           for (var i=0; i < matrix.GetLength(0); i++) 
+        {
+            for (var j=0; j < matrix.GetLength(1); j++)
+            {
+                for (var k=0; k < matrix.GetLength(2); k++)
+                {
+            
+                 Console.Write($"{matrix[i,j,k]} ({i},{j},{k}); ");
+
+                }
+                Console.WriteLine();
+            }
+        }
+}
