@@ -11,7 +11,7 @@ Console.WriteLine("Enter Number");
 int N = int.Parse(Console.ReadLine());
 
 int number = N;
-Console.WriteLine($"N = {N} -> ");
+Console.Write($"N = {N} -> ");
 
 Print(number);
 void Print(int number)
